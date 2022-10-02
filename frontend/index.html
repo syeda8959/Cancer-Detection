@@ -11,6 +11,9 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <script src="https://unpkg.com/notie"></script>
 
 </head>
 <body>
@@ -47,6 +50,34 @@
 </header>
 
 <!-- header section ends -->
+
+<br><br><br><br><br>
+<section class="book" id="book">
+
+    
+
+    <div class="row">
+        <div class="image">
+            <img src="image/book-img.svg" alt="">
+        </div>
+
+        <form action="">
+            <h3><span>Predict</span> Breast Cancer</h3>
+            <input type="text" placeholder="age" id="age" class="box">
+            <input type="text" placeholder="menopause" id="menopause" class="box">
+            <input type="text" placeholder="tumor-size" id="tumor-size" class="box">
+            <input type="text" placeholder="inv-nodes" id="inv-nodes" class="box">
+            <input type="text" placeholder="node-cap" id="node-cap" class="box">
+            <input type="text" placeholder="deg-malig" id="deg-malig" class="box">
+            <input type="text" placeholder="breast" id="breast" class="box">
+            <input type="text" placeholder="breast-quad" id="breast-quad" class="box">
+            <input type="text" placeholder="irradiat" id="irradiat" class="box">
+            <input type="submit" value="Predict" class="btn" onclick="return predict()">
+        </form>
+
+    </div>
+
+</section>
 
 <!-- home section starts  -->
 
@@ -611,6 +642,9 @@ We offer a broad spectrum of cancer services, ranging from Public Awareness to S
 
 
 <!-- custom js file link  -->
+
+
+
 <script src="js/script.js"></script>
 
 </body>

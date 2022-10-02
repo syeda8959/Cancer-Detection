@@ -2,3 +2,4 @@ Django
 django_rest_framework
 numpy
 sklearn
+django-cors-headers
