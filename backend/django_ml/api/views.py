@@ -10,12 +10,13 @@ def setup(request):
 
 @api_view(['POST'])
 def predict(request):
-    print(type(request.data))
+    
     model = pickle.load(open("/home/jawad/Documents/django-ml/ml_model.sav", "rb"))
     
     my_list = list(request.data.values())
     numpyArray = np.array([my_list])
     prediction = model.predict(numpyArray)
+    print(numpyArray,prediction)
     if prediction == 1:
         return HttpResponse('recurrence-events')
     else: 
