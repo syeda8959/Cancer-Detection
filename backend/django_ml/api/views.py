@@ -21,3 +21,11 @@ def predict(request):
         return HttpResponse('recurrence-events')
     else: 
         return HttpResponse('no-recurrence-events')
+
+
+@api_view(['POST'])
+def book(request):
+    
+    my_list = list(request.data.values())
+    print(my_list)
+    return HttpResponse('Apointment Booked!')

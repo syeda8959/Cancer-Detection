@@ -11,40 +11,38 @@ window.onscroll = () =>{
     navbar.classList.remove('active');
 }
 
-function predict(form) {
-    const age = parseInt(document.getElementById("age").value);
-    const menopause = parseInt(document.getElementById("menopause").value);
-    const tumor_size = parseInt(document.getElementById("tumor-size").value);
-    const inv_nodes = parseInt(document.getElementById("inv-nodes").value);
-    const node_cap = parseInt(document.getElementById("node-cap").value);
-    const deg_malig = parseInt(document.getElementById("deg-malig").value);
-    const breast = parseInt(document.getElementById("breast").value);
-    const breast_quad = parseInt(document.getElementById("breast-quad").value);
-    const irradiat = parseInt(document.getElementById("irradiat").value);
-    
 
-    const url = `http://localhost:8000/api/predict`;
+
+
+
+const bookForm = document.getElementById("bookForm");
+bookForm.addEventListener("submit", book);
+function book(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const number = document.getElementById("number").value;
+    const email = document.getElementById("email").value;
+    const doctor = document.getElementById("doctor").value;
+    const date = document.getElementById("date").value;
+
+    
+    const url = `http://localhost:8000/api/book`;
     fetch(url, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+            "name": name,
             "age": age,
-            "menopause": menopause,
-            "tumor-size": tumor_size,
-            "inv-nodes": inv_nodes,
-            "node-caps": node_cap,
-            "deg-malig": deg_malig,
-            "breast": breast,
-            "breast-quad": breast_quad,
-            "irradiat": irradiat
+            "number": number,
+            "email": email,
+            "doctor": doctor,
+            "date": date,
         })
-    }).then(response => response.text())
+    }).then(response => { return response.text() })
         .then((response) => {
             console.log(response);
-            notie.alert({ text: "<h1>"+response+"</h1>", position: 'bottom', time: 4, type:1 });
+            notie.alert({ text: "<h1>" + response + "</h1>", position: 'bottom', time: 3, type: 1 });
+            return false;
         });
-
 }
-
-
-
