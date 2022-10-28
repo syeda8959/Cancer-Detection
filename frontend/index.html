@@ -34,13 +34,14 @@
         <a href="index.html#doctors">doctors</a>
         <a href="index.html#hospitals">hospitals</a>
         <a href="predict_breast_cancer.html">Predict Breast Cancer</a>
-        <a href="#predictcervicalcancer">Predict cervical Cancer</a>
+        <a href="predict_cervical_cancer.html">Predict cervical Cancer</a>
         <a href="index.html#treatment">treatment</a>
         
         <a href="index.html#nutrition">nutrition</a>
         <a href="index.html#internationaldoctor">internationaldoctor</a>
         <a href="index.html#book">book</a>
         <a href="index.html#blog">blog</a>
+        <a href="contact_us.html">Contact Us</a>
       
     </nav>
 
@@ -346,7 +347,7 @@
             <img src="image/book-img.svg" alt="">
         </div>
 
-        <form id="bookForm" method="POST">
+        <form id="bookFormDoctor" method="POST">
             <h3>Doctor's appointment</h3>
             <input type="text" placeholder="your name" class="box" id="name">
             <input type="text" placeholder="your age" class="box" id="age">
@@ -378,17 +379,15 @@
             <img src="image/book-img.svg" alt="">
         </div>
 
-        <form action="">
+        <form id="bookFormHospital" method="POST">
             <h3>book hospital</h3>
-            <input type="text" placeholder="your name" class="box">
-            <input type="age" placeholder="your age" class="box">
-           
-            <input type="number" placeholder="your number" class="box">
-            <input type="text" placeholder="location" class="box">
-            <input type="email" placeholder="your email" class="box">
-            <input type="doctor's name" placeholder="hospital" class="box">
-            
-            <input type="date" class="box">
+            <input type="text" placeholder="your name" class="box" id="nameH">
+            <input type="age" placeholder="your age" class="box" id="ageH">
+            <input type="number" placeholder="your number" class="box" id="numberH">
+            <input type="text" placeholder="location" class="box" id="locationH">
+            <input type="email" placeholder="your email" class="box" id="emailH">
+            <input type="doctor's name" placeholder="hospital" class="box" id="hospitalH">
+            <input type="date" class="box" id="dateH">
             <input type="submit" value="book now" class="btn">
         </form>
 

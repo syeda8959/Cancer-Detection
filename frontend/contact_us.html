@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Personal Health Care</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <script src="https://unpkg.com/notie"></script>
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="logo1.jpg" alt="">
+
+            <i class="fas fa-heartbeat"></i> women's care. </a>
+
+        <nav class="navbar">
+            <a href="index.html#home">home</a>
+            <a href="index.html#symptoms">symptoms</a>
+            <a href="index.html#service">service</a>
+            <a href="index.html#doctors">doctors</a>
+            <a href="index.html#hospitals">hospitals</a>
+            <a href="predict_breast_cancer.html">Predict Breast Cancer</a>
+            <a href="predict_cervical_cancer .html">Predict cervical Cancer</a>
+            <a href="index.html#treatment">treatment</a>
+
+            <a href="index.html#nutrition">nutrition</a>
+            <a href="index.html#internationaldoctor">internationaldoctor</a>
+            <a href="index.html#book">book</a>
+            <a href="index.html#blog">blog</a>
+            <a href="contact_us.html">Contact Us</a>
+
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header section ends -->
+
+
+
+    <!-- predict breast cancer section start -->
+    <br><br><br><br><br>
+    <section class="book" id="book">
+
+
+
+        <div class="row">
+            <div class="image">
+                <img src="image/book-img.svg" alt="">
+            </div>
+            
+            <form id="contactUsForm" method="POST">
+                <h3>Contact Us</h3>
+                <input type="text" placeholder="your name" class="box" id="name">
+                <input type="email" placeholder="your email" class="box" id="email">
+                <input type="number" placeholder="your number" class="box" id="number">
+                <textarea type="text" placeholder="Your Message" class="box" id="message"></textarea>
+                
+                <button type="submit" value="Send" class="btn">SUBMIT</button>>
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- predict breast cancer section ends -->
+
+
+    <div class="credit"> created by <span>Syeda Faria Haque</span> | CWU </div>
+
+    </section>
+
+
+
+
+    <script>
+        const contactUsForm = document.getElementById("contactUsForm");
+        contactUsForm.addEventListener("submit", contact_us);
+        function contact_us(e) {
+
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const number = document.getElementById("number").value;
+            const message= document.getElementById("message").value;
+
+
+
+            const url = `http://localhost:8000/api/contact`;
+            fetch(url, {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    "name": name,
+                    "email": email,
+                    "number": number,
+                    "message": message
+                })
+            }).then(response => { return response.text() })
+                .then((response) => {
+
+                    console.log(response);
+                    notie.alert({ text: "<h1>" + response + "</h1>", position: 'bottom', time: 4, type: 1 });
+                    return false;
+                });
+        }
+    </script>
+    <!-- footer section ends -->
