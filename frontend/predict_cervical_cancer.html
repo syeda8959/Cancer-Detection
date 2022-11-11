@@ -66,15 +66,39 @@
 
         <form id="predictForm" method="POST">
             <h3><span>Predict</span> Cervical Cancer</h3>
-            <input type="text" placeholder="age" id="age" class="box">
-            <input type="text" placeholder="menopause" id="menopause" class="box">
-            <input type="text" placeholder="tumor-size" id="tumor-size" class="box">
-            <input type="text" placeholder="inv-nodes" id="inv-nodes" class="box">
-            <input type="text" placeholder="node-cap" id="node-cap" class="box">
-            <input type="text" placeholder="deg-malig" id="deg-malig" class="box">
-            <input type="text" placeholder="breast" id="breast" class="box">
-            <input type="text" placeholder="breast-quad" id="breast-quad" class="box">
-            <input type="text" placeholder="irradiat" id="irradiat" class="box">
+            <input type="text" placeholder="Age" id="Age" class="box">
+            <input type="text" placeholder="Number of sexual partners" id="Number_of_sexual_partners" class="box">
+            <input type="text" placeholder="First sexual intercourse" id="First_sexual_intercourse" class="box">
+            <input type="text" placeholder="Num of pregnancieses" id="Num_of_pregnancieses" class="box">
+            <input type="text" placeholder="Smokes" id="Smokes" class="box">
+            <input type="text" placeholder="Smokes (years)" id="Smokes_years" class="box">
+            <input type="text" placeholder="Smokes (packs/year)" id="Smokes_packs_year" class="box">
+            <input type="text" placeholder="Hormonal Contraceptives" id="Hormonal_Contraceptives" class="box">
+            <input type="text" placeholder="Hormonal Contraceptives (years)" id="Hormonal_Contraceptives_years" class="box">
+            <input type="text" placeholder="IUD" id="IUD" class="box">
+            <input type="text" placeholder="IUD (years)" id="IUD_years" class="box">
+            <input type="text" placeholder="STDs" id="STDs" class="box">
+            <input type="text" placeholder="STDs (number)" id="STDs_number" class="box">
+            <input type="text" placeholder="STDs:condylomatosis" id="STDs_condylomatosis" class="box">
+            <input type="text" placeholder="STDs:cervical condylomatosis" id="STDs_cervical_condylomatosis" class="box">
+            <input type="text" placeholder="STDs:vaginal condylomatosis" id="STDs_vaginal_condylomatosis" class="box">
+            <input type="text" placeholder="STDs:vulvo-perineal condylomatosis" id="STDs_vulvo_perineal_condylomatosis" class="box">
+            <input type="text" placeholder="STDs:syphilis" id="STDs_syphilis" class="box">
+            <input type="text" placeholder="STDs:pelvic inflammatory disease" id="STDs_pelvic_inflammatory_disease" class="box">
+            <input type="text" placeholder="STDs:genital herpes" id="STDs_genital_herpes" class="box">
+            <input type="text" placeholder="STDs:molluscum contagiosum" id="STDs_molluscum_contagiosum" class="box">
+            <input type="text" placeholder="STDs:AIDS" id="STDs_AIDS" class="box">
+            <input type="text" placeholder="STDs:HIV" id="STDs_HIV" class="box">
+            <input type="text" placeholder="STDs:Hepatitis B" id="STDs_Hepatitis_B" class="box">
+            <input type="text" placeholder="STDs:HPV" id="STDs_HPV" class="box">
+            <input type="text" placeholder="STDs: Number of diagnosis" id="STDs_Number_of_diagnosis" class="box">
+            <input type="text" placeholder="Dx:Cancer" id="Dx_Cancer" class="box">
+            <input type="text" placeholder="Dx:CIN" id="Dx_CIN" class="box">
+            <input type="text" placeholder="Dx:HPV" id="Dx_HPV" class="box">
+            <input type="text" placeholder="Dx" id="Dx" class="box">
+            <input type="text" placeholder="Hinselmann" id="Hinselmann" class="box">
+            <input type="text" placeholder="Schiller" id="Schiller" class="box">
+            <input type="text" placeholder="Citology" id="Citology" class="box">
             <button type="submit" value="Predict" class="btn">SUBMIT</button>>
         </form>
 
@@ -99,32 +123,80 @@
 
         e.preventDefault();
 
-        const age = parseInt(document.getElementById("age").value);
-        const menopause = parseInt(document.getElementById("menopause").value);
-        const tumor_size = parseInt(document.getElementById("tumor-size").value);
-        const inv_nodes = parseInt(document.getElementById("inv-nodes").value);
-        const node_cap = parseInt(document.getElementById("node-cap").value);
-        const deg_malig = parseInt(document.getElementById("deg-malig").value);
-        const breast = parseInt(document.getElementById("breast").value);
-        const breast_quad = parseInt(document.getElementById("breast-quad").value);
-        const irradiat = parseInt(document.getElementById("irradiat").value);
+        const Age = parseInt(document.getElementById("Age").value);
+        const Number_of_sexual_partners = parseInt(document.getElementById("Number_of_sexual_partners").value);
+        const First_sexual_intercourse = parseInt(document.getElementById("First_sexual_intercourse").value);
+        const Num_of_pregnancieses = parseInt(document.getElementById("Num_of_pregnancieses").value);
+        const Smokes = parseInt(document.getElementById("Smokes").value);
+        const Smokes_years = parseInt(document.getElementById("Smokes_years").value);
+        const Smokes_packs_year = parseInt(document.getElementById("Smokes_packs_year").value);
+        const Hormonal_Contraceptives = parseInt(document.getElementById("Hormonal_Contraceptives").value);
+        const Hormonal_Contraceptives_years = parseInt(document.getElementById("Hormonal_Contraceptives_years").value);
+        const IUD = parseInt(document.getElementById("IUD").value);
+        const IUD_years = parseInt(document.getElementById("IUD_years").value);
+        const STDs = parseInt(document.getElementById("STDs").value);
+        const STDs_number = parseInt(document.getElementById("STDs_number").value);
+        const STDs_condylomatosis = parseInt(document.getElementById("STDs_condylomatosis").value);
+        const STDs_cervical_condylomatosis = parseInt(document.getElementById("STDs_cervical_condylomatosis").value);
+        const STDs_vaginal_condylomatosis = parseInt(document.getElementById("STDs_vaginal_condylomatosis").value);
+        const STDs_vulvo_perineal_condylomatosis = parseInt(document.getElementById("STDs_vulvo_perineal_condylomatosis").value);
+        const STDs_syphilis = parseInt(document.getElementById("STDs_syphilis").value);
+        const STDs_pelvic_inflammatory_disease = parseInt(document.getElementById("STDs_pelvic_inflammatory_disease").value);
+        const STDs_genital_herpes = parseInt(document.getElementById("STDs_genital_herpes").value);
+        const STDs_molluscum_contagiosum = parseInt(document.getElementById("STDs_molluscum_contagiosum").value);
+        const STDs_AIDS = parseInt(document.getElementById("STDs_AIDS").value);
+        const STDs_HIV = parseInt(document.getElementById("STDs_HIV").value);
+        const STDs_Hepatitis_B = parseInt(document.getElementById("STDs_Hepatitis_B").value);
+        const STDs_HPV = parseInt(document.getElementById("STDs_HPV").value);
+        const STDs_Number_of_diagnosis = parseInt(document.getElementById("STDs_Number_of_diagnosis").value);
+        const Dx_Cancer = parseInt(document.getElementById("Dx_Cancer").value);
+        const Dx_CIN = parseInt(document.getElementById("Dx_CIN").value);
+        const Dx_HPV = parseInt(document.getElementById("Dx_HPV").value);
+        const Dx = parseInt(document.getElementById("Dx").value);
+        const Hinselmann = parseInt(document.getElementById("Hinselmann").value);
+        const Schiller = parseInt(document.getElementById("Schiller").value);
+        const Citology = parseInt(document.getElementById("Citology").value);
 
 
 
-        const url = `http://localhost:8000/api/predict`;
+        const url = `http://localhost:8000/api/predict/cervical_cancer`;
         fetch(url, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                "age": age,
-                "menopause": menopause,
-                "tumor-size": tumor_size,
-                "inv-nodes": inv_nodes,
-                "node-caps": node_cap,
-                "deg-malig": deg_malig,
-                "breast": breast,
-                "breast-quad": breast_quad,
-                "irradiat": irradiat
+                "Age": Age,
+                "Number of sexual partners": Number_of_sexual_partners,
+                "First sexual intercourse": First_sexual_intercourse,
+                "Num of pregnancieses": Num_of_pregnancieses,
+                "Smokes": Smokes,
+                "Smokes (years)": Smokes_years,
+                "Smokes (packs/year)": Smokes_packs_year,
+                "Hormonal Contraceptives": Hormonal_Contraceptives,
+                "Hormonal Contraceptives (years)": Hormonal_Contraceptives_years,
+                "IUD": IUD,
+                "IUD (years)": IUD_years,
+                "STDs": STDs,
+                "STDs (number)": STDs_number,
+                "STDs:condylomatosis": STDs_condylomatosis,
+                "STDs:cervical condylomatosis": STDs_cervical_condylomatosis,
+                "STDs:vaginal condylomatosis": STDs_vaginal_condylomatosis,
+                "STDs:vulvo-perineal condylomatosis": STDs_vulvo_perineal_condylomatosis,
+                "STDs:syphilis": STDs_syphilis,
+                "STDs:pelvic inflammatory disease": STDs_pelvic_inflammatory_disease,
+                "STDs:genital herpes": STDs_genital_herpes,
+                "STDs:molluscum contagiosum": STDs_molluscum_contagiosum,
+                "STDs:AIDS": STDs_AIDS,
+                "STDs:HIV": STDs_HIV,
+                "STDs:Hepatitis B": STDs_Hepatitis_B,
+                "STDs:HPV": STDs_HPV,
+                "STDs: Number of diagnosis": STDs_Number_of_diagnosis,
+                "Dx:Cancer": Dx_Cancer,
+                "Dx:CIN": Dx_CIN,
+                "Dx:HPV": Dx_HPV,
+                "Dx": Dx,
+                "Hinselmann": Hinselmann,
+                "Schiller": Schiller,
+                "Citology": Citology
             })
         }).then(response => { return response.text() })
             .then((response) => {

@@ -2,6 +2,7 @@ from django.shortcuts import render,HttpResponse
 from rest_framework.decorators import api_view
 import pickle
 import numpy as np
+import pandas as pd
 
 import csv
 
@@ -14,16 +15,45 @@ def setup(request):
 @api_view(['POST'])
 def predict(request):
     
-    model = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/ml_model.sav", "rb"))
+    model = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/breast_model.pkl", "rb"))
+    scaler = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/breast_scaler.pkl", "rb"))
+    enc = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/breast_enc.pkl", "rb"))
     
-    my_list = list(request.data.values())
-    numpyArray = np.array([my_list])
-    prediction = model.predict(numpyArray)
-    print(numpyArray,prediction)
+    _dict = request.data
+    value = list(request.data.values())
+    data = {'age': [value[0]],
+            'menopause': [value[1]],
+            'tumor-size': [value[2]],
+            'inv-nodes': [value[3]],
+            'node-caps': [value[4]],
+            'deg-malig': [value[5]],
+            'breast': [value[6]],
+            'breast-quad': [value[7]],
+            'irradiat': [value[8]],
+            } 
+    df = pd.DataFrame.from_dict(data)
+
+    #numpyArray = np.array([my_list])
+
+    #df['age'] = enc.fit_transform(df['age'])
+    #df['menopause'] = enc.fit_transform(df['menopause'])
+    #df['inv-nodes'] = enc.fit_transform(df['inv-nodes'])
+    #df['Class'] = enc.fit_transform(df['Class'])
+    #df['tumor-size'] = enc.fit_transform(df['tumor-size'])
+    df['age'] = df['age'].map({'40-49': 2, '50-59': 3})
+    df['menopause'] = df['menopause'].map({'premeno': 2, 'ge40': 0})
+    df['tumor-size'] = df['tumor-size'].map({'15-19': 2, '35-39': 6, '30-34': 5})
+    df['inv-nodes'] = df['inv-nodes'].map({'0-2': 0, '3-5': 4})
+
+    print(df)
+    X_test_scaled = scaler.transform(df)
+
+    prediction = model.predict(X_test_scaled)
+    print(X_test_scaled,prediction)
     if prediction == 1:
-        return HttpResponse('recurrence-events')
+        return HttpResponse('recurrence-events, indicates positive')
     else: 
-        return HttpResponse('no-recurrence-events')
+        return HttpResponse('no-recurrence-events, indicates negative')
 
 
 @api_view(['POST'])
