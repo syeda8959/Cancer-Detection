@@ -70,7 +70,7 @@ function bookHospital(e) {
             "number": number,
             "location": location,
             "email": email,
-            "doctor": doctor,
+            "doctor": hospital,
             "date": date,
         })
     }).then(response => { return response.text() })

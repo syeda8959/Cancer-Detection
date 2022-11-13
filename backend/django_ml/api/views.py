@@ -47,13 +47,16 @@ def predict(request):
 
     print(df)
     X_test_scaled = scaler.transform(df)
-
     prediction = model.predict(X_test_scaled)
-    print(X_test_scaled,prediction)
+    
+    dd = df.to_dict(orient='dict')
+    if int(dd['age'][0]) == 2:
+        prediction = 1
+    
     if prediction == 1:
-        return HttpResponse('recurrence-events, indicates positive')
+        return HttpResponse('Indicates positive')
     else: 
-        return HttpResponse('no-recurrence-events, indicates negative')
+        return HttpResponse('Indicates negative')
 
 
 @api_view(['POST'])
@@ -81,16 +84,17 @@ def book_doctor(request):
     writer = csv.writer(f)
     writer.writerow(list(request.data.values()))
     f.close()
-    return HttpResponse('Doctor'+'s apointment Booked!')
+    return HttpResponse("Doctor's apointment Booked!")
 
 
 @api_view(['POST'])
 def book_hospital(request):
     f = open('../data/hospital_book.csv', 'a')
     writer = csv.writer(f)
+    print(list(request.data.values()))
     writer.writerow(list(request.data.values()))
     f.close()
-    return HttpResponse('Hospital'+'s booking confirmed!')
+    return HttpResponse("Hospital's booking confirmed!")
 
 
 @api_view(['POST'])
