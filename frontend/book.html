@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,118 +12,126 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <script src="https://unpkg.com/notie"></script>
 
 </head>
+
 <body>
-    
-<!-- header section starts  -->
 
-<header class="header">
-   
-    <a href="#" class="logo">
-     <img src="logo1.jpg" alt="">
-    
-<i class="fas fa-heartbeat"></i> women's care. </a>
+    <!-- header section starts  -->
 
-    <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#symptoms">symptoms</a>
-        <a href="#service">service</a>
-        <a href="#doctors">doctors</a>
-        <a href="#hospitals">hospitals</a>
-        <a href="#breastcancerdetection">Breast Cancer Detection</a>
-        <a href="#cervicalcancerdetection">Cervical Cancer Detection</a>
-        <a href="#treatment">treatment</a>
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="logo1.jpg" alt="">
+
+            <i class="fas fa-heartbeat"></i> women's care. </a>
+
+
+        <nav class="navbar">
+
+            <a href="home.html"><strong>home</strong></a>
+            <a href="aboutus.html"><strong>About Us</strong></a>
+            <a href="symptoms.html"><strong>symptoms</strong></a>
+            <a href="service.html"><strong>service</strong></a>
+            <a href="doctors.html"><strong>doctors</strong></a>
+            <a href="hospitals.html"><strong>hospitals</strong></a>
+
+
+            <a href="predict_breast_cancer.html"><strong>Predict Breast Cancer</strong></a>
+            <a href="predict_cervical_cancer.html"><strong>Predict cervical Cancer</strong></a>
+            <a href="treatment.html"><strong>treatment</strong></a>
+
+            <a href="nutrition.html"><strong>nutrition<strong></a>
+
+            <a href="prevention.html"><strong>prevention<strong></a>
+
+            <a href="book.html"><strong>book</strong></a>
+            <a href="blog.html"><strong>blog</strong></a>
+            <a href="contact_us.html"><strong>contact us</strong></a>
+
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- booking doctor's appointment section starts   -->
+
+    <section class="book" id="book">
+        <br><br><br><br><br>
+        <h1 class="heading"> <span>book</span> now </h1>
+
+        <div class="row">
+
+            <div class="row">
+            
+                <div class="image">
+                    <img src="image/book-img.svg" alt="">
+                </div>
+            
+                <form id="bookFormDoctor" method="POST">
+                    <h3>Doctor's appointment</h3>
+                    <input type="text" placeholder="your name" class="box" id="name">
+                    <input type="text" placeholder="your age" class="box" id="age">
+                    <input type="text" placeholder="your number" class="box" id="number">
+                    <input type="text" placeholder="your email" class="box" id="email">
+                    <input type="text" placeholder="doctor's name" class="box" id="doctor">
+                    <input type="text" class="box" id="date">
+                    <button type="submit" value="book now" class="btn">SUBMIT</button>
+                </form>
+            
+            </div>
+
+    </section>
+
+
+
+    <!-- booking doctors appointment section ends -->
+
+
+    <!-- booking hospital appointment section starts   -->
+
+    <section class="book" id="book">
+
+        <h1 class="heading"> <span>book</span> now </h1>
+
+        <div class="row">
         
-        <a href="#nutrition">nutrition</a>
-        <a href="#cwuservice">CWU Service</a>
-        <a href="#international doctor">International Doctor</a>
-        <a href="#book">book</a>
-        <a href="#blog">blog</a>
-      
-    </nav>
-
-    <div id="menu-btn" class="fas fa-bars"></div>
-
-</header>
-
-<!-- header section ends -->
-
-<!-- booking doctor's appointment section starts   -->
-
-<section class="book" id="book">
-
-    <h1 class="heading"> <span>book</span> now </h1>    
-
-    <div class="row">
-
-        <div class="image">
-            <img src="image/book-img.svg" alt="">
+            <div class="image">
+                <img src="image/book-img.svg" alt="">
+            </div>
+        
+            <form id="bookFormHospital" method="POST">
+                <h3>book hospital</h3>
+                <input type="text" placeholder="your name" class="box" id="nameH">
+                <input type="age" placeholder="your age" class="box" id="ageH">
+                <input type="number" placeholder="your number" class="box" id="numberH">
+                <input type="text" placeholder="location" class="box" id="locationH">
+                <input type="email" placeholder="your email" class="box" id="emailH">
+                <input type="doctor's name" placeholder="hospital" class="box" id="hospitalH">
+                <input type="date" class="box" id="dateH">
+                <input type="submit" value="book now" class="btn">
+            </form>
+        
         </div>
 
-        <form action="">
-            <h3>docto's appointment</h3>
-            <input type="text" placeholder="your name" class="box">
-            <input type="age" placeholder="your age" class="box">
-           
-            <input type="number" placeholder="your number" class="box">
-            <input type="email" placeholder="your email" class="box">
-            <input type="doctor's name" placeholder="doctor's name" class="box">
-            
-            <input type="date" class="box">
-            <input type="submit" value="book now" class="btn">
-        </form>
+    </section>
 
-    </div>
+    <!-- booking hospital section ends -->
 
-</section>
+    <div class="credit"> created by <span>Syeda Faria Haque</span> | CWU </div>
+
+    </section>
+
+    <!-- footer section ends -->
 
 
-
-<!-- booking doctors appointment section ends -->
-
-
-<!-- booking hospital appointment section starts   -->
-
-<section class="book" id="book">
-
-    <h1 class="heading"> <span>book</span> now </h1>    
-
-    <div class="row">
-
-        <div class="image">
-            <img src="image/book-img.svg" alt="">
-        </div>
-
-        <form action="">
-            <h3>book hospital</h3>
-            <input type="text" placeholder="your name" class="box">
-            <input type="age" placeholder="your age" class="box">
-           
-            <input type="number" placeholder="your number" class="box">
-            <input type="text" placeholder="location" class="box">
-            <input type="email" placeholder="your email" class="box">
-            <input type="doctor's name" placeholder="hospital" class="box">
-            
-            <input type="date" class="box">
-            <input type="submit" value="book now" class="btn">
-        </form>
-
-    </div>
-
-</section>
-
-<!-- booking hospital section ends -->
-
- <div class="credit"> created by <span>Syeda Faria Haque</span> | CWU </div>
-
-</section>
-
-<!-- footer section ends -->
-
-
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
