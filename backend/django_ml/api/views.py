@@ -15,9 +15,9 @@ def setup(request):
 @api_view(['POST'])
 def predict(request):
     
-    model = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/breast_model.pkl", "rb"))
-    scaler = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/breast_scaler.pkl", "rb"))
-    enc = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/breast_enc.pkl", "rb"))
+    model = pickle.load(open("../model/breast_model.pkl", "rb"))
+    scaler = pickle.load(open("../model/breast_scaler.pkl", "rb"))
+    enc = pickle.load(open("../model/breast_enc.pkl", "rb"))
     
     _dict = request.data
     value = list(request.data.values())
@@ -62,8 +62,8 @@ def predict(request):
 @api_view(['POST'])
 def predict_cervical_cancer(request):
     
-    model = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/cervical_model.pkl", "rb"))
-    scaler = pickle.load(open("/home/jawad/Documents/Cancer-Detection/backend/model/cervical_scaler.pkl", "rb"))
+    model = pickle.load(open("../model/cervical_model.pkl", "rb"))
+    scaler = pickle.load(open("../model/cervical_scaler.pkl", "rb"))
 
     my_list = list(request.data.values())
     numpyArray = np.array([my_list])
