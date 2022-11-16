@@ -24,6 +24,7 @@ function bookDoctor(e) {
     const number = document.getElementById("number").value;
     const email = document.getElementById("email").value;
     const doctor = document.getElementById("doctor").value;
+    const hospital = document.getElementById("hospital").value;
     const date = document.getElementById("date").value;
 
     
@@ -36,6 +37,7 @@ function bookDoctor(e) {
             "age": age,
             "number": number,
             "email": email,
+            "hospital": hospital,
             "doctor": doctor,
             "date": date,
         })
